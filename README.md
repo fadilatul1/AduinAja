@@ -1,66 +1,121 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🌿 AduinAja — Sistem Pengaduan Fasilitas Kampus
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**AduinAja** adalah aplikasi berbasis web yang dirancang untuk memudahkan mahasiswa melaporkan kerusakan atau permasalahan fasilitas kampus secara terstruktur. Laporan dapat dikelola oleh administrator sehingga proses penanganan lebih terorganisasi dan transparan.
 
-## About Laravel
+## 🎯 Latar Belakang
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Permasalahan fasilitas kampus seperti kerusakan kursi, ruang kelas, dan fasilitas umum perlu disampaikan melalui mekanisme yang mudah diakses. AduinAja dikembangkan sebagai solusi digital untuk membantu mahasiswa menyampaikan pengaduan dan memudahkan administrator memantau tindak lanjut laporan.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Fitur Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 👩‍🎓 Mahasiswa
 
-## Learning Laravel
+* Registrasi dan login akun.
+* Membuat laporan kerusakan fasilitas kampus.
+* Mengisi kategori, lokasi, deskripsi, dan foto pendukung.
+* Melihat daftar dan status laporan milik sendiri.
+* Menerima notifikasi perubahan status laporan.
+* Mengelola laporan sesuai hak akses pengguna.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 🛠️ Administrator
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+* Melihat ringkasan statistik pengaduan.
+* Melihat dan mencari laporan yang masuk.
+* Memfilter laporan berdasarkan status dan prioritas.
+* Mengubah status dan prioritas laporan.
+* Memberikan alasan penolakan laporan bila diperlukan.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### ⚙️ Fitur Sistem
 
-## Laravel Sponsors
+* Autentikasi pengguna.
+* Pembagian hak akses mahasiswa dan administrator.
+* Penentuan prioritas laporan berdasarkan kata kunci.
+* Penyimpanan data laporan menggunakan database.
+* Antarmuka responsif dengan desain ramah pengguna.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🧰 Teknologi
 
-### Premium Partners
+* **Backend:** PHP dan Laravel 12
+* **Frontend:** Blade, Tailwind CSS, JavaScript
+* **Database:** MySQL
+* **Build tools:** Vite dan npm
+* **Version control:** Git dan GitHub
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 🚀 Instalasi dan Menjalankan Aplikasi
 
-## Contributing
+### Prasyarat
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Pastikan PHP, Composer, Node.js, npm, dan MySQL sudah terpasang.
 
-## Code of Conduct
+### 1. Clone repository
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+git clone https://github.com/fadilatul1/AduinAja.git
+cd AduinAja
+```
 
-## Security Vulnerabilities
+### 2. Instal dependensi
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+composer install
+npm install
+```
 
-## License
+### 3. Siapkan konfigurasi
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+copy .env.example .env
+php artisan key:generate
+```
+
+Buka file `.env`, lalu sesuaikan konfigurasi database MySQL:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=aduinaja_db
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Buat database `aduinaja_db` melalui phpMyAdmin atau MySQL. Sesuaikan username dan password dengan konfigurasi lokal masing-masing.
+
+### 4. Jalankan migrasi database
+
+```bash
+php artisan migrate
+```
+
+### 5. Jalankan aplikasi
+
+Buka dua terminal pada folder proyek.
+
+Terminal pertama:
+
+```bash
+php artisan serve
+```
+
+Terminal kedua:
+
+```bash
+npm run dev
+```
+
+Buka alamat aplikasi lokal yang ditampilkan oleh Laravel, biasanya `http://127.0.0.1:8000`.
+
+## 🔐 Catatan Keamanan
+
+* Jangan mengunggah file `.env` ke repository publik.
+* Gunakan konfigurasi database sendiri pada lingkungan lokal.
+* Akun administrator harus diberikan hak akses melalui mekanisme yang aman.
+* Jangan menggunakan konfigurasi pengembangan sebagai konfigurasi produksi tanpa penyesuaian.
+
+## 📌 Status Proyek
+
+AduinAja dikembangkan sebagai proyek pembelajaran berbasis Project-Based Learning (PjBL), dengan fokus pada pengembangan aplikasi web, pengelolaan database, autentikasi, dan manajemen pengaduan fasilitas kampus.
+
+## 👩‍💻 Repository
+
+[GitHub — fadilatul1/AduinAja](https://github.com/fadilatul1/AduinAja)
